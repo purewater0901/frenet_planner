@@ -1,0 +1,47 @@
+<launch>
+    <arg name="front_sampling_distance" default="10.0" />
+    <arg name="sampling_interval_length" default="0.01" />
+    <arg name="lateral_offset" default="3.0" />
+    <arg name="lateral_sampling_interval" default="0.5" />
+    <arg name="max_speed" default="13.8" />
+    <arg name="max_acceleration" default="2.0" />
+    <arg name="vehicle_length" default="5.0" />
+    <arg name="vehicle_width" default="1.895" />
+    <arg name="vehicle_wheel_base" default="2.790" />
+    <arg name="vehicle_safety_distance" default="0.2" />
+    <arg name="time_interval" default="0.2" />
+    <arg name="planner_callback_time" default="0.1" />
+    <arg name="ws" default="0.6" />
+    <arg name="wd" default="0.3" />
+    <arg name="wc" default="0.1" />
+    <arg name="min_curvature" default="-0.2" />
+    <arg name="max_curvature" default="0.2" />
+    <arg name="max_iteration" default="100" />
+    <arg name="cost_threshold" default="0.1" />
+    <arg name="input_waypoints_topic_name" default="base_waypoints" />
+    <arg name="output_waypoints_topic_name" default="safety_waypoints" />
+    <arg name="lidar_detection_topic_name" default="/detection/fake_perception/objects" />
+    <node pkg="shimizu_frenet_planner" type="lattice" name="frenet_planner" output="screen">
+        <param name="front_sampling_distance" value="$(arg front_sampling_distance)" />
+        <param name="sampling_interval_length" value="$(arg sampling_interval_length)" />
+        <param name="lateral_offset" value="$(arg lateral_offset)" />
+        <param name="lateral_sampling_interval" value="$(arg lateral_sampling_interval)" />
+        <param name="max_speed" value="$(arg max_speed)" />
+        <param name="max_acceleration" value="$(arg max_acceleration)" />
+        <param name="vehicle_length" value="$(arg vehicle_length)" />
+        <param name="vehicle_width" value="$(arg vehicle_width)" />
+        <param name="vehicle_wheel_base" value="$(arg vehicle_wheel_base)" />
+        <param name="time_interval" value="$(arg time_interval)" />
+        <param name="planner_callback_time" value="$(arg planner_callback_time)" />
+        <param name="ws" value="$(arg ws)" />
+        <param name="wd" value="$(arg wd)" />
+        <param name="wc" value="$(arg wc)" />
+        <param name="min_curvature" value="$(arg min_curvature)" />
+        <param name="max_curvature" value="$(arg max_curvature)" />
+        <param name="max_iteration" value="$(arg max_iteration)" />
+        <param name="cost_threshold" value="$(arg cost_threshold)" />
+        <param name="input_waypoints_topic_name" value="$(arg input_waypoints_topic_name)" />
+        <param name="output_waypoints_topic_name" value="$(arg output_waypoints_topic_name)" />
+        <param name="lidar_detection_topic_name" value="$(arg lidar_detection_topic_name)" />
+    </node>
+</launch>
