@@ -20,7 +20,7 @@
     <arg name="cost_threshold" default="0.1" />
     <arg name="input_waypoints_topic_name" default="base_waypoints" />
     <arg name="output_waypoints_topic_name" default="safety_waypoints" />
-    <arg name="lidar_detection_topic_name" default="/detection/fake_perception/objects" />
+    <arg name="lidar_detection_topic_name" default="/detection/lidar_detector/objects" />
     <node pkg="shimizu_frenet_planner" type="lattice" name="frenet_planner" output="screen">
         <param name="front_sampling_distance" value="$(arg front_sampling_distance)" />
         <param name="sampling_interval_length" value="$(arg sampling_interval_length)" />
