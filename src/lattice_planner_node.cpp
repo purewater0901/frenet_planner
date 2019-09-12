@@ -256,8 +256,8 @@ void LatticePlannerNode::timerCallback(const ros::TimerEvent &e)
         waypoint.pose.header = in_lane_ptr_->header;
 
         //暫定
-        //waypoint.twist = in_lane_ptr_->waypoints[0].twist;
-        waypoint.twist.twist.linear.x = 1;
+        waypoint.twist = in_lane_ptr_->waypoints[closestId].twist;
+        //waypoint.twist.twist.linear.x = 1;
 
         bestLane.waypoints.push_back(waypoint);
     }
